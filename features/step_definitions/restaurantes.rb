@@ -12,6 +12,6 @@ Então("ele visualiza as informações:") do |table|
   @element = find("#detail")
 
   expect(@element).to have_text @infos["categoria"]
-  expect(@element).to have_text @infos["categoria"]
-  expect(@element).to have_text @infos["categoria"]
+  expect(@element).to have_text @infos["descricao"]
+  expect(@element).to have_text @infos["horarios"]
 end

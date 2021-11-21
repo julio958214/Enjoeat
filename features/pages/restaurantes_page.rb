@@ -19,6 +19,7 @@ module Actions
   end
 
   def click_green_food(green_food)
+    expect(page).to have_current_path("https://enjoeat-sp2.herokuapp.com/restaurants", url: true)
     expect(page).to have_css('span[class="place-info-box-text"]', :text => green_food)
     @rest.btn_green_food.click
   end
