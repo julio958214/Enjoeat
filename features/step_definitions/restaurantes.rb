@@ -1,4 +1,4 @@
-Dado("que o usuário acesse a sessão Restaurantes do site") do
+Dado("que o usuário acesse a sessão restaurantes do site") do
   go_to
   access_session_restaurants
 end
@@ -14,4 +14,11 @@ Então("ele visualiza as informações:") do |table|
   expect(@element).to have_text @infos["categoria"]
   expect(@element).to have_text @infos["descricao"]
   expect(@element).to have_text @infos["horarios"]
+end
+
+Quando('ele selecionar a cafeteria {string}') do |coffee_corner|
+  select_coffe_corner(coffee_corner)
+end
+
+Então('ele visualiza os itens:') do |table|
 end

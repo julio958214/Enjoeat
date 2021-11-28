@@ -3,6 +3,8 @@ class Rest < SitePrism::Page
   element :btn_delivery, 'p[style="margin-top: 50px;"]'
   element :btn_restaurant, 'a[class="btn btn-danger btn-lg"]'
   element :btn_green_food, 'a[href="/restaurants/green-food"]'
+  element :txt_all_restaurant, 'section[class="content-header"] h1'
+  element :txt_coffee_corner, 'a[href="/restaurants/coffee-corner"]'
 end
 
 module Actions
@@ -20,7 +22,15 @@ module Actions
 
   def click_green_food(green_food)
     expect(page).to have_current_path("https://enjoeat-sp2.herokuapp.com/restaurants", url: true)
+    expect(@rest.txt_all_restaurant).to have_text("Todos os Restaurantes")
     expect(page).to have_css('span[class="place-info-box-text"]', :text => green_food)
     @rest.btn_green_food.click
+  end
+
+  def select_coffe_corner(coffee_corner)
+    expect(page).to have_current_path("https://enjoeat-sp2.herokuapp.com/restaurants", url: true)
+    expect(@rest.txt_all_restaurant).to have_text("Todos os Restaurantes")
+    expect(page).to have_css('span[class="place-info-box-text"]', :text => coffee_corner)
+    @rest.txt_coffee_corner.click
   end
 end
