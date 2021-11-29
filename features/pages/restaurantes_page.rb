@@ -17,6 +17,7 @@ module Actions
     expect(@rest.btn_delivery).to have_text "Delivery pra qualquer fome:"
     expect(@rest.btn_delivery).to have_text "peça e receba em casa"
     expect(@rest.btn_restaurant).to have_text "Restaurantes"
+    
     @rest.btn_restaurant.click
   end
 
@@ -24,13 +25,7 @@ module Actions
     expect(page).to have_current_path("https://enjoeat-sp2.herokuapp.com/restaurants", url: true)
     expect(@rest.txt_all_restaurant).to have_text("Todos os Restaurantes")
     expect(page).to have_css('span[class="place-info-box-text"]', :text => green_food)
+    
     @rest.btn_green_food.click
-  end
-
-  def select_coffe_corner(coffee_corner)
-    expect(page).to have_current_path("https://enjoeat-sp2.herokuapp.com/restaurants", url: true)
-    expect(@rest.txt_all_restaurant).to have_text("Todos os Restaurantes")
-    expect(page).to have_css('span[class="place-info-box-text"]', :text => coffee_corner)
-    @rest.txt_coffee_corner.click
   end
 end

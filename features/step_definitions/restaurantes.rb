@@ -15,10 +15,3 @@ Então("ele visualiza as informações:") do |table|
   expect(@element).to have_text @infos["descricao"]
   expect(@element).to have_text @infos["horarios"]
 end
-
-Quando('ele selecionar a cafeteria {string}') do |coffee_corner|
-  select_coffe_corner(coffee_corner)
-end
-
-Então('ele visualiza os itens:') do |table|
-end
