@@ -5,7 +5,6 @@ require "rspec"
 require "rufo"
 require "selenium-webdriver"
 require "allure-cucumber"
-require "webdrivers"
 require_relative "../pages/restaurantes_page.rb"
 
 World(Actions)
