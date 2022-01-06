@@ -3,7 +3,7 @@
     Funcionalidade: Restaurantes do site
     Eu como usuário devo poder interagir com todos os restaurantes da plataforma.
 
-        @green_food_restaurant
+        
         Cenário: Visualização das infomações do restaurante Green Food
             Dado que o usuário acesse a sessão restaurantes do site
             Quando ele procurar pelo restaurante "GREEN FOOD"
