@@ -17,7 +17,7 @@ gem install bundler
 
 **Clonar o projeto**
 ``` 
-git clone https://github.com/julio958214/Enjoeat.git 
+git clone https://github.com/julio958214/Enjoeat.git
 ```
 
 **Instalar dependências**
