@@ -10,14 +10,20 @@ require_relative "../pages/restaurantes_page.rb"
 
 World(Actions)
 
-Capybara.register_driver :selenium do |driver|
-  Capybara::Selenium::Driver.new(driver, :browser => :chrome)
+Capybara.register_driver :chorme do |app|
+  caps = Selenium::WebDriver::Remote::Capabilities.chrome(
+    "goog:chromeOptions" => {
+      "args" => ["--headless", "--disable-site-isolation-trials", "--disable-gpu"],
+      "excludeSwitches" => ["enable-logging"],
+    },
+  )
+  Capybara::Selenium::Driver.new(app, :browser => :chrome, :capabilities => caps)
 end
 
 Capybara.configure do
   include RSpec::Matchers
   Capybara.run_server = false
-  Capybara.default_driver = :selenium_chrome_headless
+  Capybara.default_driver = :chorme
   Capybara.default_max_wait_time = 10
   Capybara.app_host = "https://enjoeat-sp2.herokuapp.com"
 end
