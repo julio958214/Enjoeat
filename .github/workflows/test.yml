@@ -2,15 +2,16 @@ name: Ruby Regression Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
     
   schedule:
     - cron:  '1 * * * *'
     
 jobs:
-  test:
+  tests:
+    name: Tests
     runs-on: ubuntu-latest
 
     steps:
