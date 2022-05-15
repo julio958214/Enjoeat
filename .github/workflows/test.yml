@@ -1,17 +1,16 @@
-name: Ruby Regression Tests
+name: Ruby
 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
     
   schedule:
-    - cron:  '1 * * * *'
-    
+    - cron: "1 * * * *"
+
 jobs:
-  tests:
-    name: Tests
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,5 +23,5 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-      - name: Run test project
+      - name: Run tests
         run: bundle exec cucumber
