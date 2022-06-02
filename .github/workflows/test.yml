@@ -1,4 +1,4 @@
-name: Ruby
+name: Tests End-to-end Capyara
 
 on:
   push:
